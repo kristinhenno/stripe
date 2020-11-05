@@ -136,7 +136,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     let cart = localStorage.getItem("cart");
-    const products = await axios.get('http://localhost:8080/products');
+    const products = await axios.get('/products');
     cart = cart ? JSON.parse(cart) : {};
     this.setState({
       products: products.data,

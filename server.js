@@ -25,8 +25,8 @@ app.post('/create-checkout-session', async (req, res) => {
     line_items: data.line_items,
     mode: data.mode,
     allow_promotion_codes: true,
-    success_url: 'http://localhost:3000/success',
-    cancel_url: 'http://localhost:3000/',
+    success_url: 'https://stripe-kristinhenno.herokuapp.com/success',
+    cancel_url: 'https://stripe-kristinhenno.herokuapp.com/cart',
   });
 
   res.json({ id: session.id });
