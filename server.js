@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 
 
 
+
 app.use(express.urlencoded({ limit: '80mb' }));
 app.use(express.json({ limit: '80mb' }));
 app.use(cors());
@@ -31,6 +32,8 @@ app.post('/create-checkout-session', async (req, res) => {
   res.json({ id: session.id });
 });
 
+const root = require('path').join(__dirname, '/Client', 'build');
+app.use(express.static(root));
 //   const calculateOrderAmount = items => {
 //       var subtotal = 0;
 //       for (i =0; i < items.length; i++){
