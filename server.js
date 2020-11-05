@@ -31,7 +31,7 @@ app.post('/create-checkout-session', async (req, res) => {
   res.json({ id: session.id });
 });
 
-const root = require('path').join(__dirname, '/client', 'build', 'index.html');
+const root = require('path').join(__dirname, '/client', 'build');
 app.use(express.static(root));
 
 
