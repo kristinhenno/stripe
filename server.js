@@ -18,15 +18,14 @@ app.use(bodyParser.json());
 const stripe = require('stripe')('sk_test_51GTYX0Fvb9mko8HKzjScEsvacQuDA3Y9WgbNf3KUD9mD6ECOnnTkczbDYoRReNfa9tY6cwBKBLqjRvnbnJqQ6Q9r00xgwG9Qcw');
 
 app.post('/create-checkout-session', async (req, res) => {
-  console.log("hey");
   const data = req.body.data;
   const session = await stripe.checkout.sessions.create({
     payment_method_types: data.payment_method_types,
     line_items: data.line_items,
     mode: data.mode,
     allow_promotion_codes: true,
-    success_url: 'https://stripe-kristinhenno.herokuapp.com/success',
-    cancel_url: 'https://stripe-kristinhenno.herokuapp.com/cart',
+    success_url: 'http://stripe-kristinhenno.herokuapp.com/success',
+    cancel_url: 'http://stripe-kristinhenno.herokuapp.com/cart',
   });
 
   res.json({ id: session.id });
