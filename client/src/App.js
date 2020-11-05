@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from "@stripe/react-stripe-js";
 import Success from './components/Success';
@@ -15,6 +14,16 @@ import {
   Link
 } from "react-router-dom";
 import { utimes } from 'fs';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Tab from '@material-ui/core/Tab';
+
+
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+  },
+});
 // import styled from "styled-components";
 const stripePromise = loadStripe('pk_test_9cWSl1Mlu5mEFLGQajwgixZx00gIx5qQeQ');
 
@@ -147,8 +156,13 @@ class App extends React.Component {
         }}
       >
         <BrowserRouter >
-          <Link to="/">Products</Link>
-          <Link to="/cart">Cart</Link>
+
+          <Paper >
+            <Tab label="Products" to='/' component={Link} />
+            <Tab label="Cart" to='/cart' component={Link} />
+          </Paper>
+
+
           <div>
             <Switch>
               <Route
@@ -156,11 +170,19 @@ class App extends React.Component {
                 path='/'
                 component={ProductList}
               />
+            </Switch>
+            <Switch>
+              <Route
+                exact
+                path='/success'
+                component={Success}
+              />
+            </Switch>
+            <Switch>
               <Route
                 exact
                 path='/cart'
-                component={Cart}
-              />
+                component={Cart} />
             </Switch>
           </div>
         </BrowserRouter>
