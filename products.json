@@ -1,0 +1,30 @@
+[
+    {
+        "id": "HG24",
+        "name": "Taylormade Driver",
+        "price": 599.99,
+        "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
+        "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    },
+    {
+        "id": "FBS3S",
+        "name": "Footjoy Shoes",
+        "price": 99.00,
+        "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
+        "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    },
+    {
+        "id": "KFS09",
+        "name": "Travis Mathew Hat",
+        "price": 19,
+        "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
+        "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    },
+    {
+        "id": "KJF02",
+        "name": "Adidas Polo",
+        "price": 79,
+        "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
+        "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    }
+]
