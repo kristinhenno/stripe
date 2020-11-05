@@ -31,8 +31,10 @@ app.post('/create-checkout-session', async (req, res) => {
   res.json({ id: session.id });
 });
 
-const root = require('path').join(__dirname, '/client', 'build');
+const root = require('path').join(__dirname, '/client', 'build', 'index.html');
 app.use(express.static(root));
+
+
 //   const calculateOrderAmount = items => {
 //       var subtotal = 0;
 //       for (i =0; i < items.length; i++){
@@ -59,6 +61,8 @@ app.use(express.static(root));
 //     clientSecret: paymentIntent.client_secret
 //   });
 // });
+
+
 
 const productsRouter = require("./products.js");
 app.use("/products", productsRouter);
