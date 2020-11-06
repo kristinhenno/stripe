@@ -11,7 +11,8 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Link
+  Link,
+  HashRouter
 } from "react-router-dom";
 import Paper from '@material-ui/core/Paper';
 import Tab from '@material-ui/core/Tab';
@@ -147,7 +148,7 @@ class App extends React.Component {
           toCheckout: this.toCheckout
         }}
       >
-        <BrowserRouter >
+        <HashRouter  >
 
           <Paper >
             <Tab label="Products" to='/' component={Link} />
@@ -156,6 +157,7 @@ class App extends React.Component {
 
 
           <div>
+
             <Switch>
               <Route
                 exact
@@ -176,8 +178,9 @@ class App extends React.Component {
                 path='/cart'
                 component={Cart} />
             </Switch>
+
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </StripeContext.Provider>
 
     );
