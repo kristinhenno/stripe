@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 
 
@@ -24,14 +25,14 @@ app.post('/create-checkout-session', async (req, res) => {
     line_items: data.line_items,
     mode: data.mode,
     allow_promotion_codes: true,
-    success_url: 'http://stripe-kristinhenno.herokuapp.com/#/success',
+    success_url: 'http://stripe-kristinhenno.herokuapp.com/success',
     cancel_url: 'http://stripe-kristinhenno.herokuapp.com',
   });
 
   res.json({ id: session.id });
 });
 
-const root = require('path').join(__dirname, '/client', 'build');
+const root = require('path').join(__dirname, '/client', 'build', 'index.html');
 app.use(express.static(root));
 
 

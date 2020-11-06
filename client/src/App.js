@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { loadStripe } from '@stripe/stripe-js';
-// import { Elements } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import Success from './components/Success';
 import Cart from './components/Cart';
 import ProductList from './components/ProductList';
@@ -151,7 +151,7 @@ class App extends React.Component {
 
           <Paper >
             <Tab label="Products" to='/' component={Link} />
-            <Tab label="Cart" to='/#/cart' component={Link} />
+            <Tab label="Cart" to='/cart' component={Link} />
           </Paper>
 
 
@@ -166,14 +166,14 @@ class App extends React.Component {
             <Switch>
               <Route
                 exact
-                path='/#/success'
+                path='/success'
                 component={Success}
               />
             </Switch>
             <Switch>
               <Route
                 exact
-                path='/#/cart'
+                path='/cart'
                 component={Cart} />
             </Switch>
           </div>
