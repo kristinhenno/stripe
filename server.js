@@ -25,7 +25,7 @@ app.post('/create-checkout-session', async (req, res) => {
     line_items: data.line_items,
     mode: data.mode,
     allow_promotion_codes: true,
-    success_url: 'http://stripe-kristinhenno.herokuapp.com/success',
+    success_url: 'http://kristin-staging.herokuapp.com/#/success',
     cancel_url: 'http://stripe-kristinhenno.herokuapp.com',
   });
 
