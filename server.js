@@ -21,6 +21,11 @@ const stripe = require('stripe')('sk_test_51GTYX0Fvb9mko8HKzjScEsvacQuDA3Y9WgbNf
 app.post('/create-checkout-session', async (req, res) => {
   const data = req.body.data;
   const session = await stripe.checkout.sessions.create({
+    metadata: {
+      irclickid: req.cookies['irclickid'],
+      browser_ip: req.ip,
+      user_agent: req.headers['user-agent'],
+    },
     payment_method_types: data.payment_method_types,
     line_items: data.line_items,
     mode: data.mode,
