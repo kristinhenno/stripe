@@ -28,9 +28,9 @@ app.post('/create-checkout-session', async (req, res) => {
     //   "user_agent": req.headers['user-agent'],
     // },
     metadata: {
-      irclickid: req.headers.cookie['irclickid'],
-      browser_ip: req.ip,
-      user_agent: req.headers['user-agent'],
+      "irclickid": req.headers.cookie['irclickid'],
+      "browser_ip": req.ip,
+      "user_agent": req.headers['user-agent'],
     },
     payment_method_types: data.payment_method_types,
     line_items: data.line_items,
