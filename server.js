@@ -21,6 +21,16 @@ const stripe = require('stripe')('sk_test_51GTYX0Fvb9mko8HKzjScEsvacQuDA3Y9WgbNf
 app.post('/create-checkout-session', async (req, res) => {
   console.log(req.headers.cookie);
   const data = req.body.data;
+
+  var getCookies = function (request) {
+    var cookies = {};
+    request.headers && request.headers.cookie.split(';').forEach(function (cookie) {
+      var parts = cookie.match(/(.*?)=(.*)$/)
+      cookies[parts[1].trim()] = (parts[2] || '').trim();
+    });
+    return cookies;
+  };
+
   const session = await stripe.checkout.sessions.create({
     // metadata: {
     //   "irclickid": req.cookies['irclickid'],
@@ -28,7 +38,7 @@ app.post('/create-checkout-session', async (req, res) => {
     //   "user_agent": req.headers['user-agent'],
     // },
     metadata: {
-      "irclickid": req.headers.cookie['irclickid'],
+      "irclickid": getCookies(req)['irclickid'],
       "browser_ip": req.ip,
       "user_agent": req.headers['user-agent'],
     },
