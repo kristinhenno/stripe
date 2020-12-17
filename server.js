@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 const stripe = require('stripe')('sk_test_51GTYX0Fvb9mko8HKzjScEsvacQuDA3Y9WgbNf3KUD9mD6ECOnnTkczbDYoRReNfa9tY6cwBKBLqjRvnbnJqQ6Q9r00xgwG9Qcw');
 
 app.post('/create-checkout-session', async (req, res) => {
-  console.log(req);
+  console.log(req.headers.cookie);
   const data = req.body.data;
   const session = await stripe.checkout.sessions.create({
     // metadata: {
